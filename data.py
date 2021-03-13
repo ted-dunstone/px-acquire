@@ -11,27 +11,25 @@ email = st.text_input('Your Email')
 if not email:
   st.stop()
 
-st.markdown(
-  '''
-  ## General Information
+st.image('https://bixelab.com/wp-content/uploads/2020/10/bixe-logo.png')
 
-  Please answer some general information about yourself.
+"""
+## General Information
 
-  **Note** To participate, you must be 18 years or older.
-  '''
-)
+Please answer some general information about yourself.
+
+**Note** To participate, you must be 18 years or older.
+"""
 
 left, center, right = st.beta_columns(3)
 age = left.number_input('Your Age', min_value=18, max_value=120)
 sex = right.radio('Your Sex', ('Male', 'Female', 'Other'))
 
-st.markdown(
-  '''
-  ## Upload Photos
+"""
+## Upload Photos
 
-  Please upload a photo for each of the following sections.
-  '''
-)
+Please upload a photo for each of the following sections.
+"""
 
 st.header('Document')
 document = st.file_uploader('Upload/Take photo of document')
@@ -39,15 +37,14 @@ document = st.file_uploader('Upload/Take photo of document')
 st.header('Front selfie')
 selfie = st.file_uploader('Upload/Take Selfie')
 
-st.markdown(
-  '''
-  ## Data Usage
+"""
+## Data Usage
 
-  Your data will be securely stored ....
+Your data will be securely stored ....
 
-  You can opt in to allow us to retain your data for future use.
-  '''
-)
+You can opt in to allow us to retain your data for future use.
+"""
+
 retain_data = st.checkbox('Allow data reuse')
 
 st.subheader('Do you accept terms and conditions?')

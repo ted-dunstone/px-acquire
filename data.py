@@ -71,11 +71,13 @@ if complete:
   def save_file(file, name):
     print(f"uploading file: {email} {name}")
     fname, ext = os.path.splitext(file.name)
-    with open(os.path.join(outdir, name + ext), 'wb') as f:
+    new_name = os.path.join(outdir, name + ext)
+    with open(new_name, 'wb') as f:
       f.write(file.getvalue())
+    return new_name
   
   save_file(document, 'document')
-  save_file(selfie, 'selfie')
+  new_name = save_file(selfie, 'selfie')
 
   data = {
     'uuid': uid,
@@ -95,4 +97,4 @@ if complete:
   Thank you for providing your information. We will be in contact.
   """
 
-  st.image('uploads/selfie.jpg')
+  st.image(new_name)

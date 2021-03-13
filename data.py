@@ -75,7 +75,7 @@ if complete:
       f.write(file.getvalue())
   
   save_file(document, 'document')
-  save_file(selfie, 'selfie.png')
+  save_file(selfie, 'selfie')
 
   data = {
     'uuid': uid,
@@ -95,4 +95,4 @@ if complete:
 Thank you for providing your information. We will be in contact.
 """
 
-st.image('selfie.png')
+st.image('selfie.jpg')

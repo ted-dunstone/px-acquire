@@ -3,23 +3,6 @@ import os, uuid, yaml
 import pathlib
 import pandas as pd
 
-# HACK This only works when we've installed streamlit with pipenv, so the
-# permissions during install are the same as the running process
-STREAMLIT_STATIC_PATH = pathlib.Path(st.__path__[0]) / 'static'
-# We create a downloads directory within the streamlit static asset directory
-# and we write output files to it
-DOWNLOADS_PATH = (STREAMLIT_STATIC_PATH / "downloads")
-if not DOWNLOADS_PATH.is_dir():
-    DOWNLOADS_PATH.mkdir()
-
-def main():
-    st.markdown("Download from [downloads/mydata.csv](downloads/mydata.csv)")
-    mydataframe = pd.DataFrame.from_dict({'col_1': [3, 2, 1, 0], 'col_2': ['a', 'b', 'c', 'd']})
-    mydataframe.to_csv(str(DOWNLOADS_PATH / "mydata.csv"), index=False)
-
-main()
-
-
 st.header('Upload test app')
 
 uid = str(uuid.uuid1())

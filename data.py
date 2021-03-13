@@ -89,10 +89,10 @@ if complete:
   with open(os.path.join(outdir, '_info.yaml'), 'w') as f:
     f.write(yaml.dump(data))
 
-"""
-# Form Success
+  """
+  # Form Success
 
-Thank you for providing your information. We will be in contact.
-"""
+  Thank you for providing your information. We will be in contact.
+  """
 
-st.image('selfie.jpg')
+  st.image('selfie.jpg')

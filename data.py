@@ -2,6 +2,7 @@ import streamlit as st
 import os, uuid, yaml
 import pathlib
 import pandas as pd
+import face_recognition
 
 
 st.image('https://bixelab.com/wp-content/uploads/2020/10/bixe-logo.png')
@@ -98,3 +99,12 @@ if complete:
   """
 
   st.image(new_name)
+  
+  image = face_recognition.load_image_file(new_name)
+  face_locations = face_recognition.face_locations(image)
+  st.write(face_locations)
+  face_landmarks_list = face_recognition.face_landmarks(image)
+  st.write(face_landmarks_list)
+  
+  
+

@@ -3,15 +3,16 @@ import os, uuid, yaml
 import pathlib
 import pandas as pd
 
-st.header('Upload test app')
+
+st.image('https://bixelab.com/wp-content/uploads/2020/10/bixe-logo.png')
+
+st.header('BixeLab Data Acquistion')
 
 uid = str(uuid.uuid1())
 email = st.text_input('Your Email')
 
 if not email:
   st.stop()
-
-st.image('https://bixelab.com/wp-content/uploads/2020/10/bixe-logo.png')
 
 """
 ## General Information

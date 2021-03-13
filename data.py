@@ -95,4 +95,4 @@ if complete:
   Thank you for providing your information. We will be in contact.
   """
 
-  st.image('selfie.jpg')
+  st.image('uploads/selfie.jpg')

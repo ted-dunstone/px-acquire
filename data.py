@@ -74,7 +74,7 @@ if complete:
       f.write(file.getvalue())
   
   save_file(document, 'document')
-  save_file(selfie, 'selfie')
+  save_file(selfie, 'selfie.png')
 
   data = {
     'uuid': uid,
@@ -88,10 +88,10 @@ if complete:
   with open(os.path.join(outdir, '_info.yaml'), 'w') as f:
     f.write(yaml.dump(data))
 
-  st.markdown(
-    '''
-    # Form Success
+"""
+# Form Success
 
-    Thank you for providing your information. We will be in contact.
-    '''
-  )
+Thank you for providing your information. We will be in contact.
+"""
+
+st.image('selfie.png')
